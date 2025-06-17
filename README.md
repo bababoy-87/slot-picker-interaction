@@ -47,3 +47,8 @@ I kept running into time pickers that were either too basic or way too clunky. I
 4. Open `http://localhost:5173` in your browser
 
 ## 🎞️ Preview
+
+
+https://github.com/user-attachments/assets/fd274f21-143e-43b4-9049-a1cb365151cd
+
+
