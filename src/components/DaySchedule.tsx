@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import { TimeSlotInput } from "./TimeSlotInput";
 import React from "react";
+import { cn } from "../utils/cn";
 
 export interface TimeSlot {
   id: string;
@@ -29,9 +30,10 @@ export const DaySchedule: React.FC<DayScheduleProps> = ({
 }) => (
   <motion.div
     layout
-    className={`bg-white p-8 border w-full overflow-hidden ${
+    className={cn(
+      "bg-white p-8 border w-full overflow-hidden",
       enabled ? "shadow-sm border-zinc-200" : "border-zinc-50/50"
-    }`}
+    )}
     style={{
       borderRadius: 20,
       backgroundColor: enabled ? "#fff" : "transparent",
@@ -42,9 +44,10 @@ export const DaySchedule: React.FC<DayScheduleProps> = ({
       <h2 className="text-base text-zinc-600 font-medium">{day}</h2>
       <motion.button
         onClick={onToggle}
-        className={`w-11 h-6 rounded-full flex items-center transition-colors duration-200 ${
+        className={cn(
+          "w-11 h-6 rounded-full flex items-center transition-colors duration-200",
           enabled ? "bg-green-600" : "bg-zinc-200"
-        }`}
+        )}
         type="button"
         role="switch"
         aria-checked={enabled}
@@ -74,7 +77,9 @@ export const DaySchedule: React.FC<DayScheduleProps> = ({
           <motion.button
             layout
             onClick={onAddSlot}
-            className="w-full mt-4 py-3 bg-white text-zinc-600 hover:bg-zinc-100 hover:text-zinc-700 rounded-lg flex items-center justify-center gap-2 text-sm tracking-wide border border-zinc-200 hover:border-zinc-300 shadow-sm transition-colors duration-150"
+            className={cn(
+              "w-full mt-4 py-3 bg-white text-zinc-600 hover:bg-zinc-100 hover:text-zinc-700 rounded-lg flex items-center justify-center gap-2 text-sm tracking-wide border border-zinc-200 hover:border-zinc-300 shadow-sm transition-colors duration-150"
+            )}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
