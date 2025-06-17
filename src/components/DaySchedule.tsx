@@ -42,13 +42,13 @@ export const DaySchedule: React.FC<DayScheduleProps> = ({
       <h2 className="text-base text-zinc-600 font-medium">{day}</h2>
       <motion.button
         onClick={onToggle}
-        className={`w-12 h-7 rounded-full flex items-center transition-colors duration-200 ${
+        className={`w-11 h-6 rounded-full flex items-center transition-colors duration-200 ${
           enabled ? "bg-green-600" : "bg-zinc-200"
         }`}
         type="button"
       >
         <motion.div
-          className="w-5 h-5 bg-white rounded-full shadow-md"
+          className="w-4 h-4 bg-white rounded-full shadow-md"
           animate={{ x: enabled ? 24 : 4 }}
           transition={{ type: "spring", stiffness: 500, damping: 30 }}
         />
