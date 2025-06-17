@@ -30,7 +30,7 @@ export const DaySchedule: React.FC<DayScheduleProps> = ({
   <motion.div
     layout
     className={`bg-white p-8 border w-full overflow-hidden ${
-      enabled ? "shadow-sm border-zinc-200" : "border-zinc-50"
+      enabled ? "shadow-sm border-zinc-200" : "border-zinc-50/50"
     }`}
     style={{
       borderRadius: 20,
@@ -46,6 +46,10 @@ export const DaySchedule: React.FC<DayScheduleProps> = ({
           enabled ? "bg-green-600" : "bg-zinc-200"
         }`}
         type="button"
+        role="switch"
+        aria-checked={enabled}
+        aria-label={`Toggle ${day} schedule`}
+        tabIndex={0}
       >
         <motion.div
           className="w-4 h-4 bg-white rounded-full shadow-md"
@@ -76,6 +80,7 @@ export const DaySchedule: React.FC<DayScheduleProps> = ({
             exit={{ opacity: 0, y: 10 }}
             key={`${day}-add`}
             type="button"
+            aria-label={`Add time slot for ${day}`}
           >
             <span>Add More</span>
           </motion.button>
