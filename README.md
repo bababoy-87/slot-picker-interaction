@@ -1,54 +1,49 @@
-# React + TypeScript + Vite
+# 🕒 Time Slot Picker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A project I built out of frustration with most time pickers out there. I wanted something that actually lets you express real-world availability. Not just "anytime" or a single range, but as many precise slots as you need. Think: 7:30–9:00, then again 13:00–15:30, and so on. All with a clean, minimal, and accessible UI that feels great to use.
 
-Currently, two official plugins are available:
+## ✨ Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `React`
+- `TypeScript`
+- `Framer Motion`
+- `Tailwind CSS`
+- `Vite`
+- `clsx` + `tailwind-merge` for className composition
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Real Time Ranges:** Add as many slots as you want for each day. No more "anytime" nonsense.
+- **Instant Input Focus:** Open a day's schedule and the first "From" input is ready to go. No extra clicks.
+- **Accessibility First:**
+  - The toggle is a real switch (`role="switch"`, `aria-checked`, `aria-label`), not just a styled button.
+  - Every button and control is keyboard accessible.
+  - No annoying focus rings, but still easy to navigate.
+- **Apple-Inspired Polish:**
+  - Soft, rounded corners, gentle shadows, and subtle transitions.
+  - Outlined, pill-shaped inputs and buttons.
+- **Minimal, Responsive Design:**
+  - Looks great on desktop, adapts well to smaller screens.
+- **No Distractions:**
+  - No colored focus rings or weird chrome—just a subtle border change on focus.
+  - Remove buttons are perfectly aligned for that satisfying visual harmony.
+- **Clean Class Logic:**
+  - I use a custom `cn` utility (combining `clsx` and `tailwind-merge`) to keep className logic tidy.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 💭 Why I Made This
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+I kept running into time pickers that were either too basic or way too clunky. I wanted something that just works for real-life schedules—like when you're only available in the morning and then again in the evening. I obsessed over the details:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- The first input is always focused so you can just start typing.
+- Every control is labeled and accessible.
+- The UI is so clean, people say "wow" when they see it.
+- No distractions, just clarity.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 🚦 Running the Project
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run development server: `npm run dev`
+4. Open `http://localhost:5173` in your browser
+
+## 🎞️ Preview
